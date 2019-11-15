@@ -1,0 +1,16 @@
+﻿<Window x:Class="ToDoApp.InsertItem"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp"
+        mc:Ignorable="d"
+        Title="InsertItem" Height="450" Width="800">
+    <Grid>
+        <TextBox Name="txtName"  GotFocus="name_GotFocus" HorizontalAlignment="Left" Height="31" Margin="46,81,0,0" TextWrapping="Wrap" Text="Item Name" VerticalAlignment="Top" Width="150"/>
+        <TextBox Name="txtDesc"  GotFocus="desc_GotFocus" HorizontalAlignment="Left" Height="74" Margin="46,282,0,0" TextWrapping="Wrap" Text="Description" VerticalAlignment="Top" Width="323"/>
+        <Button Content="Add Item" HorizontalAlignment="Left" Height="71" Margin="452,139,0,0" VerticalAlignment="Top" Width="195" Click="Button_Click"/>
+        <DatePicker x:Name="datePicker" HorizontalAlignment="Left" Margin="46,162,0,0" VerticalAlignment="Top" Height="35" Width="124"/>
+
+    </Grid>
+</Window>

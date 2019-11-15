@@ -1,0 +1,33 @@
+﻿<Window x:Class="ToDoApp.UserPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp"
+        mc:Ignorable="d"
+        Title="UserPage" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="myDataGrid" x:FieldModifier="public" ColumnWidth="*" CanUserAddRows="False" AutoGenerateColumns="False" HorizontalAlignment="Left" Height="247" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="List ID" Binding="{Binding list_id}"  />
+                <DataGridTextColumn Header="List Name" Binding="{Binding list_name}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Action"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name ="btnOpen"  Content="Open" FontWeight="Bold" FontSize="10" Click="btnOpen_Click"/>
+                                <Button x:Name ="btnDelete"   Content="Delete" FontWeight="Bold" FontSize="10" Click="btnDelete_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Make a new list" HorizontalAlignment="Left" Margin="309,297,0,0" VerticalAlignment="Top" Width="176" Height="41" Click="Button_Click"/>
+    </Grid>
+</Window>

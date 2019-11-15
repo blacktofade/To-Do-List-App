@@ -1,0 +1,54 @@
+﻿<Window x:Class="ToDoApp.ItemPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp"
+        mc:Ignorable="d"
+        Title="ItemPage" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="myDataGrid2" x:FieldModifier="public" ColumnWidth="*" CanUserAddRows="False"  AutoGenerateColumns="False" HorizontalAlignment="Left" Height="307" Margin="2,0,-0.4,0" VerticalAlignment="Top" Width="792">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Item Name" Binding="{Binding item_name}"  />
+                <DataGridTextColumn Header="List ID" Binding="{Binding list_id}"/>
+                <DataGridTextColumn Header="Description" Binding="{Binding item_desc}"/>
+                <DataGridTextColumn Header="Deadline" Binding="{Binding item_deadline}"/>
+                <DataGridTextColumn Header="Creation Date" Binding="{Binding creation_date}"/>
+                <DataGridTextColumn Header="Status" Binding="{Binding item_status}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="Change Status"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name ="btnChange" Content="Change" FontWeight="Bold" FontSize="10" Tag="{Binding item_status}" Click="btnChange_Click"/>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add Item" HorizontalAlignment="Left" Height="60" Margin="44,334,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click"/>
+        <Button Content="Delete Item" HorizontalAlignment="Left" Height="64" Margin="274,332,0,0" VerticalAlignment="Top" Width="147" Click="Button_Click_1"/>
+        <ComboBox x:Name="cmbFilter" HorizontalAlignment="Left" Margin="527,320,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem>
+                <TextBlock Name="txtNone" Text="None"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Name="txtComplete" Text="Complete"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Name="txtNcomplete" Text="Not Completed"/>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <TextBlock Name="txtExpired" Text="Expired"/>
+            </ComboBoxItem>
+        </ComboBox>
+        <Button Content="Filter" HorizontalAlignment="Left" Margin="552,354,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
+        <TextBox Name="txtSearch" GotFocus="search_GotFocus" HorizontalAlignment="Left" Height="22" Margin="676,320,0,0" TextWrapping="Wrap" Text="Filter By Name" VerticalAlignment="Top" Width="108"/>
+        <Button Content="Search" HorizontalAlignment="Left" Margin="694,354,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_3"/>
+    </Grid>
+</Window>

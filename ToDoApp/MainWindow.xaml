@@ -1,0 +1,18 @@
+﻿<Window x:Class="ToDoApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ToDoApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="489.675" Width="800">
+    <Grid>
+        <Label Content="    TO-DO LIST APP" HorizontalAlignment="Center" Margin="85,32,-3,0" VerticalAlignment="Top" Height="74" Width="615" FontSize="48" FontWeight="Bold" FontFamily="Microsoft YaHei" Foreground="#FFF15E5E"/>
+        <TextBox Name="txtName" GotFocus="name_GotFocus" HorizontalAlignment="Left" Height="23" Margin="289,165,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="195" RenderTransformOrigin="-0.383,0.594"/>
+        <TextBox Name="txtPass" GotFocus="pass_GotFocus" HorizontalAlignment="Left" Height="23" Margin="289,222,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="195"/>
+        <Button Name="btnLogin" Content="LOGIN" HorizontalAlignment="Left" Height="36" Margin="328,288,0,0" VerticalAlignment="Top" Width="104" Click="btnLogin_Click" BorderBrush="{x:Null}"/>
+        <Label Content="          No Account ?" HorizontalAlignment="Left" Height="26" Margin="608,366,0,0" VerticalAlignment="Top" Width="140"/>
+        <Button Name="btnReg" Content="REGISTER" HorizontalAlignment="Left" Height="39" Margin="615,397,0,0" VerticalAlignment="Top" Width="133" Click="btnReg_Click"/>
+
+    </Grid>
+</Window>
